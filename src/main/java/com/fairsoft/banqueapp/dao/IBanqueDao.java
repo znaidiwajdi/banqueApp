@@ -24,4 +24,5 @@ public interface IBanqueDao {
 	public List<Employe> getEmployes();
 	public List<Groupe> getGroupes();
 	public List<Employe> getEmployesByGroupe(Long codeGrp);
+	public Client addClientSf(Client c);
 }

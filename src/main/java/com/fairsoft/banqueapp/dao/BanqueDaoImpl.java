@@ -6,6 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fairsoft.banqueapp.entities.Client;
@@ -18,6 +21,14 @@ public class BanqueDaoImpl implements IBanqueDao{
 	
 	@PersistenceContext
 	private EntityManager em;
+	@Autowired
+	private SessionFactory sf;
+
+	
+	
+	public void setSf(SessionFactory sf) {
+		this.sf = sf;
+	}
 
 	@Override
 	public Client addClient(Client c) {
@@ -25,6 +36,13 @@ public class BanqueDaoImpl implements IBanqueDao{
 		return c;
 	}
 
+
+	public Client addClientSf(Client c) {
+		Session session= sf.openSession();
+		session.persist(c);
+		return c;
+	}
+	
 	@Override
 	public Employe addEmploye(Employe e, Long codeSup) {
 		if(codeSup != null){
