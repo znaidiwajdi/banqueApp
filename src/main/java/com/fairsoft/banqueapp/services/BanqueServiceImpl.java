@@ -14,7 +14,7 @@ import com.fairsoft.banqueapp.entities.Operation;
 import com.fairsoft.banqueapp.entities.Retrait;
 import com.fairsoft.banqueapp.entities.Versement;
 
-@Transactional
+@Transactional 
 public class BanqueServiceImpl implements IBanqueService{
 	
 	private IBanqueDao dao;
@@ -133,6 +133,12 @@ public class BanqueServiceImpl implements IBanqueService{
 	public List<Employe> getEmployesByGroupe(Long codeGrp) {
 		
 		return dao.getEmployesByGroupe(codeGrp);
+	}
+
+	@Override
+	public Client addClientSf(Client c) {
+		
+		return dao.addClientSf(c);
 	}
 
 }
