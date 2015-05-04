@@ -38,7 +38,7 @@ public class BanqueDaoImpl implements IBanqueDao{
 
 
 	public Client addClientSf(Client c) {
-		Session session= sf.openSession();
+		Session session= sf.getCurrentSession();
 		session.persist(c);
 		return c;
 	}
