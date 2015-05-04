@@ -24,7 +24,7 @@ public class Test {
 		
 		IBanqueService metier= (IBanqueService) context.getBean("service");
 		
-		metier.addClientSf(new Client("Z6", "sfsfsfsfs"));
+		metier.addClientSf(new Client("Z6", "sfsfsfsfs")); 
 		
 		List<Operation> ops= metier.consulterOperation("TN55566644");
 		Compte cp= metier.consulterCompte("TN55566644");
