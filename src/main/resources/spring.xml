@@ -35,7 +35,7 @@
 		</property>
 	</bean>
 
-	<bean id="transactionManager"
+	<bean id="transactionManagerSessionFactory"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
@@ -62,10 +62,11 @@
 		<property name="persistenceUnitName" value="MY_P_U"></property>
 	</bean>
 
-<!-- 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> -->
-<!-- 		<property name="entityManagerFactory" ref="entityMangerFactory"></property> -->
-<!-- 	</bean> -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="transactionManagerJpa" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityMangerFactory"></property>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManagerSessionFactory" />
+	<tx:annotation-driven transaction-manager="transactionManagerJpa"/>
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="com.fairsoft.banqueapp.entities"></context:component-scan>
 
