@@ -5,10 +5,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
-	<bean id="dao" class="com.fairsoft.banqueapp.dao.BanqueDaoImpl"></bean>
-	<bean id="service" class="com.fairsoft.banqueapp.services.BanqueServiceImpl">
-		<property name="dao" ref="dao"></property>
-	</bean>
+<!-- 	<bean id="dao" class="com.fairsoft.banqueapp.dao.BanqueDaoImpl"></bean> -->
+<!-- 	<bean id="service" class="com.fairsoft.banqueapp.services.BanqueServiceImpl"> -->
+<!-- 		<property name="dao" ref="dao"></property> -->
+<!-- 	</bean> -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
@@ -68,6 +68,8 @@
 	<tx:annotation-driven transaction-manager="transactionManagerSessionFactory" />
 	<tx:annotation-driven transaction-manager="transactionManagerJpa"/>
 	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="com.fairsoft.banqueapp.entities"></context:component-scan>
+	
+	<context:component-scan base-package="com.fairsoft.banqueapp.dao"></context:component-scan>
+	<context:component-scan base-package="com.fairsoft.banqueapp.services"></context:component-scan>
 
 </beans>

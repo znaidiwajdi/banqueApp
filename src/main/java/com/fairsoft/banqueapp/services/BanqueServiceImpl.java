@@ -3,6 +3,8 @@ package com.fairsoft.banqueapp.services;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fairsoft.banqueapp.dao.IBanqueDao;
@@ -13,10 +15,10 @@ import com.fairsoft.banqueapp.entities.Groupe;
 import com.fairsoft.banqueapp.entities.Operation;
 import com.fairsoft.banqueapp.entities.Retrait;
 import com.fairsoft.banqueapp.entities.Versement;
-
+@Service
 @Transactional 
 public class BanqueServiceImpl implements IBanqueService{
-	
+	@Autowired
 	private IBanqueDao dao;
 	
 	

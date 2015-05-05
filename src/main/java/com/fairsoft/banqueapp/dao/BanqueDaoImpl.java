@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fairsoft.banqueapp.entities.Client;
@@ -16,6 +17,7 @@ import com.fairsoft.banqueapp.entities.Compte;
 import com.fairsoft.banqueapp.entities.Employe;
 import com.fairsoft.banqueapp.entities.Groupe;
 import com.fairsoft.banqueapp.entities.Operation;
+@Repository
 @Transactional
 public class BanqueDaoImpl implements IBanqueDao{
 	
