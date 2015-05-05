@@ -24,20 +24,20 @@ public class Test {
 		
 		IBanqueService metier= (IBanqueService) context.getBean("service");
 		
-	//	metier.addClientSf(new Client("O5", "GHGHGHG")); 
+		metier.addClientSf(new Client("U3", "GZZZZZG")); 
 		
-		List<Operation> ops= metier.consulterOperation("TN55566644");
-		Compte cp= metier.consulterCompte("TN55566644");
-		for(Operation op: ops){
-			System.out.println("************");
-			System.out.println("operation numero  : "+ op.getNumOperation());
-			System.out.println("date operation "+op.getDateOperation());
-			System.out.println(" Montant transaction "+op.getMontant());
-			System.out.println("type tranbsaction: "+op.getClass().getSimpleName());
-		}
-		System.out.println("************");
-		
-		System.out.println("solde restant: "+cp.getSolde());
+//		List<Operation> ops= metier.consulterOperation("TN55566644");
+//		Compte cp= metier.consulterCompte("TN55566644");
+//		for(Operation op: ops){
+//			System.out.println("************");
+//			System.out.println("operation numero  : "+ op.getNumOperation());
+//			System.out.println("date operation "+op.getDateOperation());
+//			System.out.println(" Montant transaction "+op.getMontant());
+//			System.out.println("type tranbsaction: "+op.getClass().getSimpleName());
+//		}
+//		System.out.println("************");
+//		
+//		System.out.println("solde restant: "+cp.getSolde());
 		
 		//Compte ce= (Compte) metier.consulterCompte("TN55566644");
 		//String codeCli= ce.getNumCompte();
